@@ -1,5 +1,5 @@
-suppressPackageStartupMessages(library(sf))
-library(tidyverse)
+library(sf)
+suppressPackageStartupMessages(library(tidyverse))
 
 args <- commandArgs(trailingOnly = TRUE)
 
