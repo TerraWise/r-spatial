@@ -49,5 +49,5 @@ if (dir.exists("soil-type/output") == FALSE) {
     dir.create("soil-type/output")
 }
 cat("Writing output to 'soil-type/output/subset_soil.geojson'...\n")
-write_sf(snipped_sf, "soil-type/output/subset_soil.geojson")
+write_sf(snipped_sf, "soil-type/output/subset_soil.geojson", delete_dsn = TRUE)
 cat("Successfully wrote output to 'soil-type/output/subset_soil.geojson'.\n")
