@@ -1,4 +1,6 @@
 library(sf)
+library(here)
+library(aws.s3)
 suppressPackageStartupMessages(library(tidyverse))
 
 # --- AWS Configuration ---
@@ -6,7 +8,11 @@ suppressPackageStartupMessages(library(tidyverse))
 bucket_name <- "survey-polygons"
 aws_region <- "ap-southeast-2"
 
-key <- read.csv("s3-base-read_write_accessKeys.csv")
+key <- read.csv(here(
+  getwd(),
+  "append-data",
+  "s3-base-read_write_accessKeys.csv"
+))
 
 Sys.setenv(
   "AWS_ACCESS_KEY_ID" = key$Access.key.ID,
